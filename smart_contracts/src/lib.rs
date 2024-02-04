@@ -1,4 +1,5 @@
 #![no_std]
+use fungible_token_io::{FTAction, FTEvent, IoFungibleToken};
 use gstd::{collections::HashMap, errors::Result, msg, prelude::*, ActorId};
 use io::*;
 
