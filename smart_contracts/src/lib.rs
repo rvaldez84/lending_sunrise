@@ -25,12 +25,12 @@ extern "C" fn handle() {
 
 fn handle_state() -> Result<()> {
     let payload = msg::load()?;
-    if let ActionLending::Borrow = payload {
-        msg::reply(EventLending::BorrowDone, 0)?;
+    if let ActionLending::DepositToPool = payload {
+        msg::reply(EventLending::DepositDone, 0)?;
     }
 
-    if let ActionLending::Lend = payload {
-        msg::reply(EventLending::LendDone, 0)?;
+    if let ActionLending::RedeemDeposit = payload {
+        msg::reply(EventLending::RedeemDone, 0)?;
     }
 
     Ok(())
